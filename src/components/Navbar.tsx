@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav className="bg-primary shadow-lg">
+    <nav className="bg-primary shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -11,42 +18,36 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-            <Link
-              to="/"
-              className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Home
-            </Link>
-            <Link
-              to="/blog"
+            <button
+              onClick={() => scrollToSection("blog")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
               Blog
-            </Link>
-            <Link
-              to="/about"
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
               About
-            </Link>
-            <Link
-              to="/contact"
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
-            </Link>
-            <Link
-              to="/hackathons"
+            </button>
+            <button
+              onClick={() => scrollToSection("hackathons")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
               Hackathons
-            </Link>
-            <Link
-              to="/resources"
+            </button>
+            <button
+              onClick={() => scrollToSection("resources")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
               Resources
-            </Link>
+            </button>
           </div>
         </div>
       </div>
