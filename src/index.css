@@ -95,7 +95,24 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    min-height: 100vh;
+    padding-top: 4rem;
+    scroll-margin-top: 4rem;
+  }
+
+  #contact {
+    min-height: calc(100vh - 4rem);
   }
 }

@@ -4,7 +4,9 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Add padding to account for fixed navbar
+      window.scrollBy(0, -64); // 64px is the height of the navbar
     }
   };
 
@@ -19,22 +21,22 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
             <button
-              onClick={() => scrollToSection("blog")}
+              onClick={() => scrollToSection("home")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
-              Blog
+              Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
-              About
+              About Us
             </button>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("blog")}
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
-              Contact
+              Blogs
             </button>
             <button
               onClick={() => scrollToSection("hackathons")}
@@ -47,6 +49,12 @@ const Navbar = () => {
               className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
             >
               Resources
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-white hover:text-primary-lighter px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Contact Us
             </button>
           </div>
         </div>
