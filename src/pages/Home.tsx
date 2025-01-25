@@ -10,16 +10,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Home = () => {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const blogRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-  const hackathonsRef = useRef<HTMLDivElement>(null);
-  const resourcesRef = useRef<HTMLDivElement>(null);
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Carousel Section */}
-      <section className="relative h-[600px] overflow-hidden">
+      <section id="home" className="relative h-[600px] overflow-hidden">
         <Carousel className="w-full">
           <CarouselContent>
             {carouselItems.map((item, index) => (
@@ -53,48 +47,30 @@ const Home = () => {
         </Carousel>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-gradient-to-b from-primary-lighter to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b"
-                alt="Why Choose Us"
-                className="rounded-lg shadow-xl"
-              />
-            </div>
-            <div>
-              <h2 className="text-4xl font-bold text-primary mb-6">
-                Why Choose Us?
-              </h2>
-              <p className="text-lg text-gray-700 mb-6">
-                We combine cutting-edge AI technology with deep industry expertise
-                to deliver solutions that drive real business value. Our team of
-                experts is dedicated to helping you navigate the complex world of
-                artificial intelligence and machine learning.
+      {/* About Section */}
+      <section id="about" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <img
+              src="/placeholder.svg"
+              alt="About us"
+              className="w-full md:w-1/2 rounded-lg"
+            />
+            <div className="md:w-1/2">
+              <h2 className="text-4xl font-bold mb-6">About Us</h2>
+              <p className="text-lg text-gray-700 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
-              <ul className="space-y-4">
-                <li className="flex items-center text-gray-700">
-                  <ArrowRight className="text-primary mr-2" />
-                  Expert Team of AI Specialists
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <ArrowRight className="text-primary mr-2" />
-                  Customized Solutions for Your Business
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <ArrowRight className="text-primary mr-2" />
-                  Proven Track Record of Success
-                </li>
-              </ul>
+              <p className="text-lg text-gray-700">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section ref={blogRef} id="blog" className="py-16 bg-gray-50">
+      <section id="blog" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-8">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -118,30 +94,45 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section ref={aboutRef} id="about" className="py-16">
+      {/* Hackathons Section */}
+      <section id="hackathons" className="py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <img
-              src="/placeholder.svg"
-              alt="About us"
-              className="w-full md:w-1/2 rounded-lg"
-            />
-            <div className="md:w-1/2">
-              <h2 className="text-4xl font-bold mb-6">About Us</h2>
-              <p className="text-lg text-gray-700 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p className="text-lg text-gray-700">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl font-bold mb-4">Hackathons</h2>
+            <p className="text-xl text-gray-600">Coming Soon</p>
+            <div className="animate-pulse">
+              <div className="w-32 h-32 mx-auto bg-primary/20 rounded-full"></div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Resources Section */}
+      <section id="resources" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-8">Resources</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Getting Started Guide", size: "2.5 MB" },
+              { title: "Best Practices", size: "1.8 MB" },
+              { title: "Documentation", size: "3.2 MB" },
+            ].map((resource, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <ArrowRight className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
+                <p className="text-gray-600 mb-4">Size: {resource.size}</p>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <ArrowRight className="w-4 h-4" />
+                  Download PDF
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section ref={contactRef} id="contact" className="py-16 bg-gray-50">
+      <section id="contact" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-8">Contact Us</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -180,43 +171,6 @@ const Home = () => {
                 Send Message
               </Button>
             </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Hackathons Section */}
-      <section ref={hackathonsRef} id="hackathons" className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl font-bold mb-4">Hackathons</h2>
-            <p className="text-xl text-gray-600">Coming Soon</p>
-            <div className="animate-pulse">
-              <div className="w-32 h-32 mx-auto bg-primary/20 rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources Section */}
-      <section ref={resourcesRef} id="resources" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8">Resources</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Getting Started Guide", size: "2.5 MB" },
-              { title: "Best Practices", size: "1.8 MB" },
-              { title: "Documentation", size: "3.2 MB" },
-            ].map((resource, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <ArrowRight className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
-                <p className="text-gray-600 mb-4">Size: {resource.size}</p>
-                <Button variant="outline" className="flex items-center gap-2">
-                  <ArrowRight className="w-4 h-4" />
-                  Download PDF
-                </Button>
-              </div>
-            ))}
           </div>
         </div>
       </section>
