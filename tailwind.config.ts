@@ -25,12 +25,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8B5CF6", // Vivid purple for AI theme
-          light: "#D946EF", // Magenta pink
-          lighter: "#F0DBFF", // Soft purple
+          DEFAULT: "#0EA5E9", // Ocean blue
+          light: "#38BDF8", // Lighter blue
+          lighter: "#D3E4FD", // Soft blue
         },
         secondary: {
-          DEFAULT: "#0EA5E9", // Ocean blue
+          DEFAULT: "#1E40AF", // Darker blue
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -42,7 +42,7 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#F97316", // Bright orange
+          DEFAULT: "#3B82F6", // Bright blue
           foreground: "#FFFFFF",
         },
         popover: {
@@ -55,9 +55,9 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-ai': 'linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)',
-        'gradient-card': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
-        'gradient-hero': 'linear-gradient(225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%)',
+        'gradient-ai': 'linear-gradient(102.3deg, rgba(14,165,233,1) 5.9%, rgba(56,189,248,1) 64%, rgba(211,228,253,1) 89%)',
+        'gradient-card': 'linear-gradient(90deg, #D3E4FD 0%, #0EA5E9 100%)',
+        'gradient-hero': 'linear-gradient(225deg, #D3E4FD 0%, #38BDF8 48%, #0EA5E9 100%)',
       },
       keyframes: {
         "accordion-down": {
