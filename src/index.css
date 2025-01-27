@@ -66,14 +66,15 @@
   }
 
   section {
-    min-height: 100vh;
-    padding-top: 4rem;
+    min-height: calc(100vh - 4rem);
+    padding-top: 5rem;
+    padding-bottom: 3rem;
     scroll-margin-top: 4rem;
     @apply transition-all duration-500;
   }
 
   #contact {
-    min-height: calc(100vh - 4rem);
+    min-height: calc(100vh - 8rem);
   }
 
   .glass-card {
